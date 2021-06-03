@@ -1,25 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @customer.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @customer.last_name %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @customer.phone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @customer.email %>
-</p>
-
 <h1>Orders</h1>
 
 <table>
@@ -33,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @customer.orders.each do |order| %>
+    <% @orders.each do |order| %>
       <tr>
         <td><%= order.customer_id %></td>
         <td><%= order.product_name %></td>
@@ -46,5 +26,6 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<br>
+
+<%= link_to 'New Order', new_order_path %>
