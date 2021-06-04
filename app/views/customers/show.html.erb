@@ -20,8 +20,7 @@
   <%= @customer.email %>
 </p>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+
 
 
 <h1>Orders</h1>
@@ -29,6 +28,7 @@
 <table>
   <thead>
     <tr>
+      <th>Customer_ID</th>
       <th>product_name</th>
       <th>product_count</th>
        
@@ -37,8 +37,9 @@
   </thead>
 
   <tbody>
-    <% @orders.each do |order| %>
+    <% @customer.orders.each do |order| %>
       <tr>
+        <td><%= order.customer_id %></td>
         <td><%= order.product_name %></td>
         <td><%= order.product_count %></td>
          
@@ -49,3 +50,7 @@
     <% end %>
   </tbody>
 </table>
+
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

@@ -12,6 +12,11 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="field">
+    <%= f.label :customer_id %>
+    <%= f.collection_select :customer_id_id, Customer.all, :id, :full_name, include_blank: true %>
+  </div>
 
   <div class="field">
     <%= f.label :product_name %>
@@ -23,7 +28,7 @@
     <%= f.text_field :product_count %>
   </div>
 
- <%= f.collection_select :customer_id_id, Customer.all, :id, :full_name, include_blank: true %>
+ 
 
   <div class="actions">
     <%= f.submit %>

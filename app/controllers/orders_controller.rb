@@ -57,7 +57,7 @@ class OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:first_name, :last_name, :phone, :email)
+      params.require(:order).permit(:customer_id, :product_name, :product_count)
     end
     
     def catch_not_found(e)
